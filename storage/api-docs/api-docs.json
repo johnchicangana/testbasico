@@ -148,6 +148,121 @@
                     }
                 }
             }
+        },
+        "/schools": {
+            "get": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "Mostrar colegios",
+                "operationId": "56c6b82218d9c5327f39721824360783",
+                "responses": {
+                    "200": {
+                        "description": "Mostrar todos los colegios."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/schools/create": {
+            "get": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "Vista Crear colegios",
+                "operationId": "df857f6026e8a83961865fb02f91cb1a",
+                "responses": {
+                    "200": {
+                        "description": "Crear todos los colegios."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/schools/": {
+            "post": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "Agregar colegio",
+                "operationId": "fac13e029fac3f3d526dbaf4388bf72a",
+                "responses": {
+                    "200": {
+                        "description": "Guarda colegio."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/schools/{id}": {
+            "get": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "Muestra un colegio por ID",
+                "operationId": "1364cc874d03e93eaa23ea60e53da0e3",
+                "responses": {
+                    "200": {
+                        "description": "Muestra colegio."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "Eliminar colegio",
+                "operationId": "3158375b52f62cfe213b318466d571f2",
+                "responses": {
+                    "200": {
+                        "description": "Elimina un colegio por ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/schools/edit": {
+            "get": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "Vista editar colegios",
+                "operationId": "54d7885ff2d2d5ee0ddc72aad41e5c98",
+                "responses": {
+                    "200": {
+                        "description": "Editar colegio por ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Schools"
+                ],
+                "summary": "actualiza un colegio por ID",
+                "operationId": "58d3d9f72dd845923888dd6f882159c9",
+                "responses": {
+                    "200": {
+                        "description": "Actualizar colegio por ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
         }
     },
     "tags": [
@@ -158,6 +273,10 @@
         {
             "name": "Login",
             "description": "Login"
+        },
+        {
+            "name": "Schools",
+            "description": "Schools"
         }
     ],
     "components": {
@@ -169,9 +288,9 @@
                 "scheme": "https",
                 "flows": {
                     "password": {
-                        "authorizationUrl": "http://localhost/oauth/authorize",
-                        "tokenUrl": "http://localhost/oauth/token",
-                        "refreshUrl": "http://localhost/token/refresh",
+                        "authorizationUrl": "http://sena.test//oauth/authorize",
+                        "tokenUrl": "http://sena.test//oauth/token",
+                        "refreshUrl": "http://sena.test//token/refresh",
                         "scopes": []
                     }
                 }
