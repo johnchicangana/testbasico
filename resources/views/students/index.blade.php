@@ -12,8 +12,9 @@
         </style>
 </head>
 <body>
+    <h1>Students</h1>
     <div>
-        <a class="button-primary" href="/schools/create">Add New!</a>
+        <a class="button-primary" href="/students/create">Add New!</a>
     </div>
     @if ($list)
         <table>
@@ -21,7 +22,8 @@
                 <tr>
                     <td>ID</td>
                     <td>Name</td>
-                    <td>Address</td>
+                    <td>Student Code</td>
+                    <td>School</td>
                     <td>Created At</td>
                     <td>Updated At</td>
                     <td colspan="2">Actions</td>
@@ -32,14 +34,15 @@
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->address }}</td>
+                        <td>{{ $item->code_number }}</td>
+                        <td>{{ $item->school->name }}</td>
                         <td>{{ $item->created_at->format('Y-m-d') }}</td>
                         <td>{{ $item->updated_at->format('Y-m-d') }}</td>
                         <td>
-                            <a href="/schools/{{ $item->id }}/edit">Edit</a>
+                            <a href="/students/{{ $item->id }}/edit">Edit</a>
                         </td>
                         <td>
-                            <form action="/schools/{{ $item->id }}" method="POST">
+                            <form action="/students/{{ $item->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Delete</button>

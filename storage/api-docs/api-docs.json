@@ -263,6 +263,123 @@
                     }
                 }
             }
+        },
+        "/students": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Mostrar estuudiantes",
+                "operationId": "7c586e93df821205d2c5af51e9dfd6d2",
+                "responses": {
+                    "200": {
+                        "description": "Mostrar todos los estuudiantes."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/students/create": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Vista Crear estudiantes",
+                "operationId": "e918dbcaa43fb8fd3ed3b1bf8a3d8954",
+                "responses": {
+                    "200": {
+                        "description": "Crear todos los estudiantes."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/students/": {
+            "post": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Agregar estudiante",
+                "operationId": "1f66056a9fc648f3f38e66a1948c13ca",
+                "responses": {
+                    "200": {
+                        "description": "Guarda estudiante."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/students/{id}": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Muestra un estudiante por ID",
+                "operationId": "8b4ba20f528dd1c1b78cbbb5950dfc15",
+                "responses": {
+                    "200": {
+                        "description": "Muestra estudiante."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Eliminar estudiante",
+                "operationId": "8b7dedcaa57ee3874f0220652271d1a7",
+                "responses": {
+                    "200": {
+                        "description": "Elimina un estudiante por ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/student/edit": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Vista editar estudiantes",
+                "operationId": "3e46734fc9fb04b6984827dc2ca6bd6e",
+                "responses": {
+                    "200": {
+                        "description": "Editar estudiante por ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/students/edit": {
+            "put": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "actualiza un estudiante por ID",
+                "operationId": "972b68ca80ffbf43109d359eaf61983e",
+                "responses": {
+                    "200": {
+                        "description": "Actualizar estudiante por ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
         }
     },
     "tags": [
@@ -277,6 +394,10 @@
         {
             "name": "Schools",
             "description": "Schools"
+        },
+        {
+            "name": "Students",
+            "description": "Students"
         }
     ],
     "components": {
