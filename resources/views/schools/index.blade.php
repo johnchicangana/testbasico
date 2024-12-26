@@ -49,6 +49,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$list->links() }}
     @endif
 </body>
 </html>

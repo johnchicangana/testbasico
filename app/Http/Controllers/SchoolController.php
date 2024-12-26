@@ -29,7 +29,7 @@ class SchoolController extends Controller
     */
     public function index()
     {
-        $list = School::all();
+        $list = School::orderby('id','asc')->paginate(10);
         // return $list;
         return view('schools.index', compact('list'));
     }
