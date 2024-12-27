@@ -22,7 +22,9 @@ class StoreStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "name" => ['required', 'string', 'max:255'],
+            "code_number" => ['required', 'string', 'max:255'],
+            "school_id" => ['required', 'integer']
         ];
     }
 }

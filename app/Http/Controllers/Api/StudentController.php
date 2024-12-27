@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreStudentRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -25,15 +26,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = new Student();
-        $student->name = $request->name;
-        $student->code_number = $request->code_number;
-        $student->school_id = $request->school_id;
-        $student->save();
-        return response()->json([
-            "message" => 'Added successfully',
-            "data" => $student
-        ], 200);
+        try{
+            $request->validate([
+                "name" => ['required', 'string', 'max:255'],
+                "code_number" => ['required', 'string', 'max:255'],
+                "school_id" => ['required', 'integer']
+            ]);
+            $student = Student::create($request->all());
+            return response()->json([
+                "message" => 'Added successfully',
+                "data" => $student
+            ], 200);
+        }catch(\Exception $e){
+            return response()->json([
+                "message" => 'Failed to add',
+                "data" => $e->getMessage(),
+                "request" => $request->all()
+            ], 500);
+        }
     }
 
     /**
