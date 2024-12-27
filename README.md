@@ -28,6 +28,20 @@ Para poder visualizar la documentacion creada se debe ir al siguiente link, teni
 
 - http://DOMINIO_LOCAL/api/documentation
 
+## Unit Test
+
+comando para crear un test unitario
+
+- php artisan make:test [ClassName]Test --unit
+
+comando para ejecutar todos los test
+
+- php artisan test
+
+comando para ejecutar un test especifico
+
+- php artisan test --filter=[TestFileName]
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
