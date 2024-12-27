@@ -10,3 +10,6 @@ Route::post('register', [AuthController::class, 'register']);
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::apiResource('schools', 'App\Http\Controllers\Api\SchoolController')->parameters(['schools' => 'id'])->names('schools');
+Route::apiResource('students', 'App\Http\Controllers\Api\StudentController')->parameters(['students' => 'id'])->names('students');
