@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <form action="/students/{{$student->id}}" method="POST">
+<body class="container mx-auto pt-10">
+    <a href="/students" class="rounded bg-gray-700 text-white px-7 py-3">Back</a>
+    <h1 class="text-2xl text-center">Editar Estudiante</h1>
+    <form action="/students/{{$student->id}}" method="POST" class="flex flex-col w-1/4 mx-auto">
         @csrf
         @method('PUT')
-        <label>
+        <label class="my-2 w-full flex justify-between">
             Name:
-            <input type="text" name="name" id="name" value="{{$student->name}}">
+            <input type="text" name="name" id="name" value="{{$student->name}}" class="border border-gray-400 p-1">
         </label>
-        <label>
+        <label class="my-2 w-full flex justify-between">
             Code Number:
-            <input type="text" name="code_number" id="code_number" value="{{$student->code_number}}">
+            <input type="text" name="code_number" id="code_number" value="{{$student->code_number}}" class="border border-gray-400 p-1">
         </label>
-        <label>
+        <label class="my-2 w-full flex justify-between">
             School:
-            <input type="text" name="school_id" id="school_id" value="{{$student->school_id}}">
+            <input type="text" name="school_id" id="school_id" value="{{$student->school_id}}" class="border border-gray-400 p-1">
         </label>
-        <button type="submit">Save</button>
+        <button type="submit" class="rounded bg-green-700 text-white py-3">Save</button>
     </form>
 </body>
 </html>
