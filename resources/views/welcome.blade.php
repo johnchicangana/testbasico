@@ -14,10 +14,12 @@
     <body class="font-sans bg-gray-200 container mx-auto pt-10">
         <h1 class="text-2xl text-center pb-10">Test CRUD</h1>
         <p>Este es un test para utilizar tablas desde una DB, una tabla es principal, la otra depende de la primera</p>
-        <p>Las tablas se crearon usando seeders y factory</p>
+        <p>Las tablas se crearon usando migrations y se llenan con seeders y factory</p>
         <ul class="list-disc list-inside">
             <li><a href="/schools" class="underline cursor-pointer">Listado de colegios</a></li>
             <li><a href="/students" class="underline cursor-pointer">Listado de Estudiantes</a></li>
         </ul>
+        <h2 class="text-xl py-10">Abrir el front de next.js</h2>
+        <a href="http://localhost:3000/" target="_blank" class="rounded bg-gray-700 text-white px-7 py-3">Go to next.js</a>
     </body>
 </html>
