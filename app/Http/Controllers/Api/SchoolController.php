@@ -26,15 +26,26 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
-        $school = new School();
-        $school->name = $request->name;
-        $school->address = $request->address;
-        $school->save();
-        
-        return response()->json([
-            "message" => 'Added successfully',
-            "data" => $school
-        ], 200);
+        try{
+            $request->validate([
+                'name' => 'required',
+                'address' => 'required'
+            ]);
+
+            $school = School::create($request->all());
+            
+            return response()->json([
+                "message" => 'Added successfully',
+                "data" => $school
+            ], 200);
+
+        }catch(\Exception $e){
+            return response()->json([
+                "message" => 'Failed to add',
+                "data" => $e->getMessage(),
+                "request" => $request->all()
+            ], 500);
+        }
     }
 
     /**

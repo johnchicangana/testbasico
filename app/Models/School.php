@@ -9,8 +9,10 @@ class School extends Model
 {
     use  HasFactory;
     protected $fillable = [
-        'id','name', 'address'
+        'name', 'address'
     ];
+
+    protected $guarded = ['id'];
 
     public function student(){
         return $this->belongsTo(Student::class, 'id', 'school_id');
